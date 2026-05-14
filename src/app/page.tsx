@@ -5,17 +5,36 @@ import AboutSection from "@/components/features/home/about-section";
 import DetectionSection from "@/components/features/home/detection/Detection";
 import QualityExpert from "@/components/features/home/qualityExpert/QualityExpert";
 import StudentSuccess from "@/components/features/home/studentSuccess/StudentSuccess";
+import { ScrollAnimation } from "@/components/common/ScrollAnimation";
 
 export default function Home() {
   return (
     <div className="flex flex-col">
       <HeroSection />
-      <AboutSection />
-      <DetectionSection />
-      <QualityExpert />
-      <StudentSuccess />
-      <AdvisorQA />
-      <SimpleFormRegister />
+      
+      <ScrollAnimation variant="fade">
+        <AboutSection />
+      </ScrollAnimation>
+
+      <ScrollAnimation variant="slideUp">
+        <DetectionSection />
+      </ScrollAnimation>
+
+      <ScrollAnimation variant="slideUp">
+        <QualityExpert />
+      </ScrollAnimation>
+
+      <ScrollAnimation variant="slideUp">
+        <StudentSuccess />
+      </ScrollAnimation>
+
+      <ScrollAnimation variant="slideUp">
+        <AdvisorQA />
+      </ScrollAnimation>
+
+      <ScrollAnimation variant="scale">
+        <SimpleFormRegister />
+      </ScrollAnimation>
     </div>
   );
 }

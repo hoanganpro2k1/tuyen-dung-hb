@@ -2,7 +2,6 @@
 // All images are now in public/images/
 
 // Define all image paths as strings from the public directory
-const bell = "/images/Bell.png";
 const bgLotrinhMobile = "/images/bg-lotrinh-mobile.png";
 const bgImageCard = "/images/bgImageCard.png";
 const bigtarget = "/images/bigtarget.png";
@@ -126,7 +125,6 @@ const hocbaSpotlightMegaSpeaker = "/images/hocba-spotlight/mega-speaker.png";
 const hocbaSpotlightStar = "/images/hocba-spotlight/star.png";
 
 // Course
-const avtRoadmap1 = "/images/avt_roadmap_1.png";
 const avtRoadmap2 = "/images/avt_roadmap_2.png";
 const avtRoadmap3 = "/images/avt_roadmap_3.png";
 const banner2 = "/images/course/banner-2.png";
@@ -308,7 +306,6 @@ export const IMAGES = {
   zalo,
   bg,
   ellipse4,
-  bell,
   lotrinh,
   bgLotrinhMobile,
   kinhLup,
@@ -539,7 +536,6 @@ export const IMAGES = {
     whiteNoteCourse,
     adviseCourse,
     banner2Mobile,
-    avtRoadmap1,
     avtRoadmap2,
     avtRoadmap3,
     deepMatrix,
