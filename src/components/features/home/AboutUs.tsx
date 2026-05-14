@@ -28,16 +28,15 @@ const AboutUs = () => {
 
           <div className="flex flex-col gap-6 md:gap-8" data-aos="fade-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md self-start border border-gold-primary/20">
-              <HomeIcon className="size-4 md:size-6 text-red-primary" />
-              <span className="text-sm md:text-base font-semibold text-red-primary uppercase tracking-wider">
+              <HomeIcon className="size-4 md:size-6 text-primary" />
+              <span className="text-sm md:text-base font-semibold text-primary uppercase tracking-wider">
                 Về chúng tôi
               </span>
             </div>
 
             <h2 className="text-3xl md:text-5xl font-bold text-red-dark leading-tight">
               Hệ thống giáo dục <br className="hidden md:block" />
-              <span className="text-red-primary">An Hưng</span> - Ươm mầm tài
-              năng
+              <span className="text-primary">An Hưng</span> - Ươm mầm tài năng
             </h2>
 
             <div className="flex flex-col gap-4 text-base md:text-lg text-gray-700 leading-relaxed">
@@ -56,7 +55,7 @@ const AboutUs = () => {
 
             <div className="grid grid-cols-2 gap-4 md:gap-8 mt-4">
               <div className="flex flex-col gap-2 p-4 bg-white rounded-xl shadow-sm border-l-4 border-gold-primary">
-                <span className="text-2xl md:text-3xl font-bold text-red-primary">
+                <span className="text-2xl md:text-3xl font-bold text-primary">
                   10+
                 </span>
                 <span className="text-xs md:text-sm font-medium text-gray-500 uppercase">
@@ -64,7 +63,7 @@ const AboutUs = () => {
                 </span>
               </div>
               <div className="flex flex-col gap-2 p-4 bg-white rounded-xl shadow-sm border-l-4 border-gold-primary">
-                <span className="text-2xl md:text-3xl font-bold text-red-primary">
+                <span className="text-2xl md:text-3xl font-bold text-primary">
                   5000+
                 </span>
                 <span className="text-xs md:text-sm font-medium text-gray-500 uppercase">

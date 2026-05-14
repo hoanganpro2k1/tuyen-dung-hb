@@ -1,60 +1,58 @@
-import footerLogo from "@/assets/images/footer.svg";
-import {
-  default as favIcon,
-  default as siteLogo,
-} from "@/assets/images/site-logo.png";
+const footerLogo = "/images/footer.svg";
+const favIcon = "/images/site-logo.png";
+const siteLogo = "/images/site-logo.png";
 import { IMAGES } from "@/lib/constants/images";
 
 export const SITE_SETTINGS = {
   default_country: "Viet Nam",
   social_login_github_status: "0",
   default_currency: null,
-  site_email: "kiennt.edu8@gmail.com",
-  site_phone: "+84888861786",
+  site_email: "tuyendung@mayanhung.com.vn",
+  site_phone: "+84 238 3861 786",
 
   // SEO & Meta
   meta_title:
-    "Tiếng Trung An Hưng - Học Tiếng Trung cá nhân hóa & luyện thi chứng chỉ",
+    "Tuyển dụng Công ty CP May An Hưng - Cơ hội việc làm ổn định, thu nhập cao",
   meta_description:
-    "Luyện thi TOCFL, HSK, Giao Tiếp Phiên Biên Dịch, Luyện Thi Đại Học cam kết đầu ra với phương pháp học và lộ trình rõ ràng và chi tiết.",
+    "Công ty CP May An Hưng tuyển dụng hàng nghìn lao động phổ thông và nhân viên văn phòng. Môi trường chuyên nghiệp, phúc lợi tốt, đi làm ngay.",
   meta_keywords: [
-    "Tiếng Trung An Hưng",
-    "Học tiếng trung",
-    "Luyện thi HSK",
-    "Luyện thi TOCFL",
+    "Tuyển dụng May An Hưng",
+    "Việc làm Nghệ An",
+    "Công ty CP May An Hưng",
+    "Tuyển dụng công nhân may",
   ],
-  site_url: process.env.NEXT_PUBLIC_CLIENT_URL || "https://hoc-ba.edu.vn",
+  site_url: process.env.NEXT_PUBLIC_CLIENT_URL || "https://mayanhung.com.vn",
 
   // Analytics
   google_analytics_tracking_id: "G-YJJT3GGKZL",
 
   // Branding
-  site_name: "Tiếng Trung An Hưng",
-  site_legal_name: "Công ty Cổ phần Giáo dục & Đào tạo An Hưng",
-  site_alternate_name: "An Hưng Education",
-  site_logo: siteLogo.src,
-  site_logo_meta: IMAGES.logoMeta.src,
+  site_name: "May An Hưng Recruitment",
+  site_legal_name: "Công ty Cổ phần May An Hưng",
+  site_alternate_name: "An Hưng Garment",
+  site_logo: siteLogo,
+  site_logo_meta: IMAGES.logoMeta,
   site_footer_logo: footerLogo,
   site_fav_icon: favIcon,
-  site_copy_right_text: "Thuộc quyền quản lí của Tiếng Trung An Hưng",
+  site_copy_right_text: "Bản quyền thuộc về Công ty CP May An Hưng",
 
   // Business Info
   price_range: "$$", // $ (rẻ), $$ (trung bình), $$$ (cao), $$$$ (rất cao)
 
   // Social Media
-  social_facebook_education: "https://www.facebook.com/hocba.education",
-  social_facebook_hocbahsk: "https://www.facebook.com/hocbahsk",
-  social_instagram: "https://www.instagram.com/hocba.education",
-  social_zalo: "https://zalo.me/68362348417414118",
+  // Social Media
+  social_facebook_education: "https://www.facebook.com/mayanhung",
+  social_facebook_hocbahsk: "https://www.facebook.com/mayanhung.tuyendung",
+  social_instagram: "https://www.instagram.com/mayanhung",
+  social_zalo: "https://zalo.me/02383861786",
 
   // Address
-  address_street:
-    " Toà Nhà GP Building Hòa Phát, 257 Giải Phóng, P. Phương Mai",
-  address_locality: "Hà Nội",
-  address_postal_code: "10000",
+  address_street: "Khối 1, Thị trấn Tân Kỳ",
+  address_locality: "Huyện Tân Kỳ, Tỉnh Nghệ An",
+  address_postal_code: "43000",
   address_country: "VN",
 
   // Geo Coordinates
-  geo_latitude: 20.9859002,
-  geo_longitude: 105.8405429,
+  geo_latitude: 19.0116,
+  geo_longitude: 105.2533,
 } as const;

@@ -46,7 +46,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
             />
           </div>
           <div>
-            <h3 className="text-xl font-black uppercase leading-tight text-red-primary md:text-[32px]">
+            <h3 className="text-xl font-black uppercase leading-tight text-primary md:text-[32px]">
               {name}
             </h3>
             <p className="my-1 text-sm font-bold text-[#373737] md:text-[22px] opacity-80">

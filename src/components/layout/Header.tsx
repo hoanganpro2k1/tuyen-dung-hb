@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { AlignJustify, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { name: "Giới thiệu", href: "#about-section" },
@@ -18,6 +18,33 @@ const navItems = [
 const Header = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px", // Adjust to trigger active state when section is in top-middle
+      threshold: 0,
+    };
+
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(`#${entry.target.id}`);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+
+    // Watch all sections that have IDs matching our nav items
+    navItems.forEach((item) => {
+      const element = document.querySelector(item.href);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[100] w-full bg-white border-b border-gray-50 py-4 shadow-[0_4px_25px_rgba(0,0,0,0.05)] transition-all duration-300">
@@ -38,17 +65,15 @@ const Header = () => {
                 <Link
                   href={item.href}
                   className={cn(
-                    "relative text-sm font-black uppercase tracking-tight transition-all duration-300 hover:text-red-primary group md:text-base",
-                    pathname === item.href
-                      ? "text-red-primary"
-                      : "text-[#373737]",
+                    "relative text-sm font-black uppercase tracking-tight transition-all duration-300 hover:text-primary group md:text-base",
+                    activeSection === item.href ? "text-primary" : "text-[#373737]",
                   )}
                 >
                   {item.name}
                   <span
                     className={cn(
                       "absolute -bottom-1 left-0 h-0.5 bg-red-primary transition-all duration-300 group-hover:w-full",
-                      pathname === item.href ? "w-full" : "w-0",
+                      activeSection === item.href ? "w-full" : "w-0",
                     )}
                   ></span>
                 </Link>
@@ -59,7 +84,7 @@ const Header = () => {
           {/* Action Buttons */}
           <div className="hidden items-center gap-4 lg:flex">
             <Link href="#register-form">
-              <Button className="rounded-xl bg-red-primary px-8 py-6 text-base font-black uppercase tracking-widest text-white shadow-xl hover:bg-[#8A0000] hover:scale-105 transition-all">
+              <Button className="rounded-xl bg-primary px-8 py-6 text-base font-black uppercase tracking-widest text-white shadow-xl hover:bg-[#8A0000] hover:scale-105 transition-all">
                 Ứng tuyển ngay
               </Button>
             </Link>
@@ -71,7 +96,7 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="max-sm:size-5 size-8 text-red-primary" />
+              <X className="max-sm:size-5 size-8 text-primary" />
             ) : (
               <AlignJustify className="max-sm:size-5 size-8 text-[#373737]" />
             )}
@@ -104,7 +129,7 @@ const Header = () => {
               Logo
             </Link>
             <button onClick={() => setIsMenuOpen(false)}>
-              <X className="size-7 text-red-primary" />
+              <X className="size-7 text-primary" />
             </button>
           </div>
 
@@ -116,9 +141,7 @@ const Header = () => {
                 href={item.href}
                 className={cn(
                   "py-2 text-lg font-normal tracking-wider transition-all border-b border-gray-50 last:border-0",
-                  pathname === item.href
-                    ? "text-red-primary"
-                    : "text-[#373737]",
+                  activeSection === item.href ? "text-primary" : "text-[#373737]",
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >

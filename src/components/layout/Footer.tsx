@@ -12,8 +12,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 overflow-hidden bg-[#820000] text-white">
-      <div className="container mx-auto px-4 py-12 md:py-20 lg:px-8">
+    <footer className="relative z-10 max-sm:pb-10 overflow-hidden bg-[#820000] text-white">
+      <div className="container mx-auto px-4 py-6 md:py-10 lg:px-8">
         {/* Top Section */}
         <div className="mb-8 flex flex-col items-center gap-6 text-center md:flex-row md:text-left">
           <Link

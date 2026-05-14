@@ -51,15 +51,15 @@ const SimpleFormRegister = () => {
   return (
     <section
       id="register-form"
-      className="relative md:py-24 bg-white overflow-hidden"
+      className="relative md:py-0 bg-white overflow-hidden"
     >
       <div className="container mx-auto">
-        <div className="relative mx-auto max-w-6xl overflow-hidden bg-gradient-to-l from-[#B90E0A] to-[#7D1900] px-4 py-4 md:p-16 shadow-[0_20px_50px_rgba(185,14,10,0.3)]">
+        <div className="relative mx-auto w-full overflow-hidden bg-gradient-to-l from-[#B90E0A] to-[#7D1900] px-4 py-4 md:p-16 shadow-[0_20px_50px_rgba(185,14,10,0.3)]">
           {/* Decorative background elements */}
           <div className="absolute -left-20 -top-20 size-64 rounded-full bg-white/5 blur-3xl"></div>
           <div className="absolute -right-20 -bottom-20 size-64 rounded-full bg-gold-primary/10 blur-3xl"></div>
 
-          <div className="grid grid-cols-1 items-center gap-4 lg:grid-cols-2 lg:gap-20">
+          <div className="grid grid-cols-1 items-center gap-4 lg:gap-10">
             <div className="relative z-10 text-white">
               <div className="mb-4 flex items-center gap-4">
                 <Image
@@ -75,7 +75,7 @@ const SimpleFormRegister = () => {
               </div>
             </div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 w-full max-w-full lg:max-w-3xl m-auto">
               <form
                 onSubmit={handleSubmit}
                 className="space-y-6 rounded-3xl bg-white/10 backdrop-blur-xl p-6 md:p-10 border border-white/20 shadow-2xl"
@@ -181,7 +181,7 @@ const SimpleFormRegister = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full h-16 md:h-20 rounded-2xl bg-gradient-to-r from-gold-primary to-yellow-400 text-red-primary text-xl md:text-2xl font-black uppercase tracking-widest shadow-2xl hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-70 disabled:cursor-not-allowed group/btn"
+                  className="w-full h-16 md:h-20 rounded-2xl bg-gradient-to-r from-gold-primary to-yellow-400 text-primary text-xl md:text-2xl font-black uppercase tracking-widest shadow-2xl hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-70 disabled:cursor-not-allowed group/btn"
                 >
                   <span className="flex items-center justify-center gap-3">
                     {loading ? "Đang gửi..." : "Ứng tuyển ngay"}

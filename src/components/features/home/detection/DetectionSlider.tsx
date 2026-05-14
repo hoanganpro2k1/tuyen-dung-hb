@@ -5,7 +5,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import { SearchX } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
-import Link from "../ui/Link";
 
 interface SlideData {
   id: string;
@@ -23,7 +22,7 @@ export const DetectionSlider: React.FC<DetectionSliderProps> = ({ slides }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
     duration: 30,
-    align: "start",
+    align: "center",
     containScroll: "trimSnaps",
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -55,7 +54,7 @@ export const DetectionSlider: React.FC<DetectionSliderProps> = ({ slides }) => {
   );
 
   return (
-    <div className="container relative z-10 mx-auto px-4">
+    <div className="container relative z-10 w-full mx-auto">
       <div className="mb-8 flex flex-row items-center justify-center gap-3 text-white">
         <SearchX className="h-6 w-6 md:h-8 md:w-8 text-gold-primary" />
         <h2 className="text-xl font-bold tracking-wide md:text-[36px] text-center">
@@ -73,7 +72,7 @@ export const DetectionSlider: React.FC<DetectionSliderProps> = ({ slides }) => {
               onClick={() => scrollTo(index)}
               className={cn(
                 "relative flex items-center justify-center rounded-[18px] px-6 md:px-12 text-sm md:text-[26px] font-black transition-all h-10 md:h-12",
-                "border-[1.6px] bg-white text-red-primary border-red-primary/20 shadow-md",
+                "border-[1.6px] bg-white text-primary border-red-primary/20 shadow-md",
                 isActive &&
                   "active border-[2.5px] bg-gradient-to-r from-gold-primary to-red-primary text-white opacity-100 md:h-16 lg:px-24 scale-110 md:scale-100",
               )}
@@ -113,7 +112,7 @@ export const DetectionSlider: React.FC<DetectionSliderProps> = ({ slides }) => {
       <div className="relative mx-auto max-w-5xl">
         <button
           onClick={scrollPrev}
-          className="absolute left-0 top-1/2 z-20 hidden h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-red-primary shadow-xl transition-all hover:bg-red-primary hover:text-white active:scale-95 md:flex"
+          className="absolute left-0 top-1/2 z-20 hidden h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-primary shadow-xl transition-all hover:bg-red-primary hover:text-white active:scale-95 md:flex"
           aria-label="Previous slide"
         >
           <svg
@@ -131,7 +130,7 @@ export const DetectionSlider: React.FC<DetectionSliderProps> = ({ slides }) => {
         </button>
         <button
           onClick={scrollNext}
-          className="absolute right-0 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-white text-red-primary shadow-xl transition-all hover:bg-red-primary hover:text-white active:scale-95 md:flex"
+          className="absolute right-0 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full bg-white text-primary shadow-xl transition-all hover:bg-red-primary hover:text-white active:scale-95 md:flex"
           aria-label="Next slide"
         >
           <svg
@@ -181,12 +180,6 @@ export const DetectionSlider: React.FC<DetectionSliderProps> = ({ slides }) => {
                       className="mb-8 text-base md:text-[20px] text-justify font-medium leading-relaxed text-[#373737]"
                       dangerouslySetInnerHTML={{ __html: slide.description }}
                     />
-                    <Link
-                      href={slide.href}
-                      className="px-10 py-4 font-bold shadow-gold/30"
-                    >
-                      XEM CHI TIẾT KHOÁ HỌC
-                    </Link>
                   </div>
                 </div>
               </div>

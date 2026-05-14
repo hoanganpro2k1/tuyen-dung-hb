@@ -11,12 +11,12 @@ const heroData = [
   {
     number: "01",
     content: "Lao động phổ thông",
-    link: "#roadmap-section",
+    link: "#detection-section",
   },
   {
     number: "02",
     content: "Nhân viên văn phòng",
-    link: "#mentor-content",
+    link: "#detection-section",
   },
   {
     number: "03",
@@ -38,13 +38,14 @@ export default function HeroSession() {
       ></div>
 
       <div className="container z-10 mx-auto w-full lg:px-6">
-        <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0">
-          <nav className="mt-7 flex w-full flex-col items-start px-4 text-left md:mt-0 lg:w-[52%]">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch">
+          <div className="mt-7 flex w-full flex-col items-start px-4 text-left md:mt-0 lg:w-1/2">
             <div
-              className={`${greatVibes.className} text-white text-3xl px-10 py-2 mb-3 flex max-sm:flex-col items-center justify-between rounded-xl bg-gradient-to-r from-[#7D1900] to-[#B90E0A] px-3 max-sm:w-full lg:mb-10`}
+              className={`${greatVibes.className} text-white max-sm:text-3xl text-4xl px-10 max-sm:py-2 py-4 mb-3 flex flex-row max-sm:flex-col items-center justify-between rounded-xl bg-gradient-to-r from-[#7D1900] to-[#B90E0A] max-sm:w-full lg:mb-10`}
             >
               <p className="w-full ">Việc làm ổn định</p>
-              <p className="text-right  justify-end flex w-full">
+              <span className="mx-2 max-sm:hidden">-</span>
+              <p className="max-sm:text-right text-nowrap justify-end flex w-full">
                 Thu nhập bền vững
               </p>
             </div>
@@ -59,12 +60,12 @@ export default function HeroSession() {
                   Tuyển dụng{" "}
                 </span>
                 <br />
-                <span className="text-3xl font-black uppercase lg:text-[60px]">
+                <span className="text-3xl text-nowrap font-black uppercase lg:text-[60px]">
                   Việc làm thu nhập cao
                 </span>
               </h1>
 
-              <p className="mt-4 flex min-h-[56px] w-full items-center justify-center rounded-2xl border-[3px] border-[#F3C650] bg-white/50 px-6 py-3 shadow-gold backdrop-blur-sm md:w-fit md:justify-start lg:min-h-[68px]">
+              <p className="mt-4 flex min-h-[56px] w-full items-center justify-center rounded-2xl border-[3px] border-[#F3C650] bg-white/80 px-6 py-3 shadow-gold backdrop-blur-md md:w-fit md:justify-start lg:min-h-[68px]">
                 <strong className="text-2xl font-extrabold uppercase leading-tight text-primary sm:font-black lg:text-3xl">
                   Các vị trí tuyển dụng
                 </strong>
@@ -124,18 +125,33 @@ export default function HeroSession() {
                 aria-hidden="true"
               ></div>
             </nav>
-          </nav>
+          </div>
 
-          <div className="right-0 min-h-[327px] w-full md:min-h-[515px] lg:absolute lg:w-[48%]">
-            <div className="relative z-10 mx-auto h-auto w-full overflow-hidden lg:ml-auto lg:max-w-[1011px]">
+          <div className="relative flex w-full items-center justify-center lg:w-1/2">
+            <div className="relative z-10 max-sm:mx-4 h-full w-full overflow-hidden rounded-3xl shadow-[0_20px_50px_rgba(185,14,10,0.15)]">
               <Image
                 src={IMAGES.home.heroGarment}
                 alt="Môi trường làm việc hiện đại, chuyên nghiệp tại Công ty CP May An Hưng - Dây chuyền sản xuất tiên tiến với đội ngũ công nhân tay nghề cao"
                 width={1011}
                 height={515}
                 priority
-                className="h-[327px] w-full object-cover object-left md:h-[515px]"
+                className="h-[327px] w-full object-cover transition-transform duration-700 hover:scale-105 md:h-[515px] lg:h-full"
               />
+              {/* Floating Badge */}
+              <div className="absolute bottom-6 left-6 right-6 flex flex-wrap gap-3 md:bottom-8 md:left-8">
+                <div className="flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 shadow-lg backdrop-blur-md">
+                  <span className="flex h-2.5 w-2.5 animate-pulse rounded-full bg-green-500"></span>
+                  <span className="text-xs font-bold text-gray-800 md:text-sm">
+                    1000+ Nhân viên
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 rounded-full bg-white/90 px-3 py-1.5 shadow-lg backdrop-blur-md">
+                  <span className="flex h-2.5 w-2.5 animate-pulse rounded-full bg-blue-500"></span>
+                  <span className="text-xs font-bold text-gray-800 md:text-sm">
+                    Chuyên nghiệp
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

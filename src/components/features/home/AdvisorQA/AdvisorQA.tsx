@@ -34,12 +34,12 @@ const AdvisorQA = () => {
   return (
     <section
       id="advisor-qa"
-      className="relative mx-auto max-w-[1493px] py-6 md:py-24 bg-gradient-to-b from-[#FFFBF700] via-[#FFF7EF] to-[#FFF9F900]"
+      className="relative mx-auto max-w-[1493px] py-6 md:py-0 bg-gradient-to-b from-[#FFFBF700] via-[#FFF7EF] to-[#FFF9F900]"
     >
-      <div className="relative z-10 mx-auto max-w-[1212px] px-4 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-[1212px] px-4 lg:px-8 lg:pb-10">
         <div className="mb-10 md:mb-16">
           <div className="flex items-center gap-6">
-            <span className="text-7xl font-black text-red-primary md:text-[120px] drop-shadow-lg">
+            <span className="text-7xl font-black text-primary md:text-[120px] drop-shadow-lg">
               ?
             </span>
             <div>
@@ -55,7 +55,7 @@ const AdvisorQA = () => {
 
         <div className="flex flex-col items-start gap-12 lg:flex-row lg:gap-20">
           {/* Accordion Section */}
-          <div className="w-full lg:w-[60%] space-y-4 md:space-y-6">
+          <div className="w-full lg:w-[60%] mx-auto space-y-4 md:space-y-6">
             {qaData.map((item, index) => (
               <details
                 key={item.id}
@@ -67,8 +67,8 @@ const AdvisorQA = () => {
                     {item.question}
                   </h3>
                   <div className="relative flex h-8 w-8 items-center justify-center transition-transform duration-500 group-open:rotate-180">
-                    <PlusIcon className="absolute size-6 text-red-primary group-open:opacity-0 transition-opacity" />
-                    <MinusIcon className="absolute size-6 text-red-primary opacity-0 group-open:opacity-100 transition-opacity" />
+                    <PlusIcon className="absolute size-6 text-primary group-open:opacity-0 transition-opacity" />
+                    <MinusIcon className="absolute size-6 text-primary opacity-0 group-open:opacity-100 transition-opacity" />
                   </div>
                 </summary>
 
