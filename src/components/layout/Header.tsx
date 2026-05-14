@@ -1,56 +1,34 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { AlignJustify, X, ChevronDown } from 'lucide-react';
-import { IMAGES } from '@/lib/constants/images';
-import { TitleMenu } from '@/lib/constants/enums';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { AlignJustify, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navItems = [
-  { name: TitleMenu.INTRODUCE, href: '/gioi-thieu' },
-  { name: TitleMenu.KHOA_HOC, href: '/khoa-hoc' },
-  { name: TitleMenu.LICH_KHAI_GIANG, href: '/lich-khai-giang' },
-  { name: TitleMenu.CAM_NANG, href: '/cam-nang' },
-  { name: TitleMenu.LIEN_HE, href: '/lien-he' },
+  { name: "Giới thiệu", href: "#about-section" },
+  { name: "Việc làm", href: "#detection-section" },
+  { name: "Phúc lợi", href: "#quality-expert" },
+  { name: "Cảm nhận", href: "#student-success" },
+  { name: "Hỏi đáp", href: "#advisor-qa" },
 ];
 
 const Header = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-[100] w-full transition-all duration-300',
-        isScrolled 
-          ? 'bg-white/90 backdrop-blur-md py-2 shadow-xl' 
-          : 'bg-[#F7FAFC] py-4'
-      )}
-    >
+    <header className="fixed top-0 left-0 right-0 z-[100] w-full bg-white border-b border-gray-50 py-4 shadow-[0_4px_25px_rgba(0,0,0,0.05)] transition-all duration-300">
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="relative z-10 block transition-transform hover:scale-105">
-            <Image
-              src={IMAGES.logo}
-              alt="Học Bá Education"
-              width={120}
-              height={60}
-              className="h-10 w-auto md:h-12"
-            />
+          <Link
+            href="/"
+            className="relative text-lg uppercase text-primary font-black z-10 block transition-transform hover:scale-105"
+          >
+            Logo
           </Link>
 
           {/* Desktop Navigation */}
@@ -60,11 +38,19 @@ const Header = () => {
                 <Link
                   href={item.href}
                   className={cn(
-                    'text-base font-black uppercase tracking-tight transition-colors hover:text-red-primary',
-                    pathname === item.href ? 'text-red-primary' : 'text-[#373737]'
+                    "relative text-sm font-black uppercase tracking-tight transition-all duration-300 hover:text-red-primary group md:text-base",
+                    pathname === item.href
+                      ? "text-red-primary"
+                      : "text-[#373737]",
                   )}
                 >
                   {item.name}
+                  <span
+                    className={cn(
+                      "absolute -bottom-1 left-0 h-0.5 bg-red-primary transition-all duration-300 group-hover:w-full",
+                      pathname === item.href ? "w-full" : "w-0",
+                    )}
+                  ></span>
                 </Link>
               </li>
             ))}
@@ -72,22 +58,22 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="hidden items-center gap-4 lg:flex">
-            <Link href="/dang-ky">
+            <Link href="#register-form">
               <Button className="rounded-xl bg-red-primary px-8 py-6 text-base font-black uppercase tracking-widest text-white shadow-xl hover:bg-[#8A0000] hover:scale-105 transition-all">
-                Đăng ký ngay
+                Ứng tuyển ngay
               </Button>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="relative z-10 block lg:hidden"
+            className="relative z-10 block mr-4 lg:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="size-8 text-red-primary" />
+              <X className="max-sm:size-5 size-8 text-red-primary" />
             ) : (
-              <AlignJustify className="size-8 text-[#373737]" />
+              <AlignJustify className="max-sm:size-5 size-8 text-[#373737]" />
             )}
           </button>
         </nav>
@@ -96,29 +82,63 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          'fixed inset-0 z-0 bg-white transition-all duration-500 lg:hidden',
-          isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+          "fixed inset-0 z-[110] bg-black/50 backdrop-blur-sm transition-all duration-500 lg:hidden",
+          isMenuOpen ? "visible opacity-100" : "invisible opacity-0",
         )}
+        onClick={() => setIsMenuOpen(false)}
       >
-        <div className="flex h-full flex-col items-center justify-center gap-10 px-8 pt-20">
-          {navItems.map((item) => (
+        <div
+          className={cn(
+            "absolute right-0 top-0 h-full w-[85%] max-w-[320px] bg-white shadow-2xl transition-transform duration-500 ease-out flex flex-col",
+            isMenuOpen ? "translate-x-0" : "translate-x-full",
+          )}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Mobile Menu Header */}
+          <div className="flex items-center justify-between p-6 border-b border-gray-50">
             <Link
-              key={item.name}
-              href={item.href}
-              className={cn(
-                'text-2xl font-black uppercase tracking-widest transition-all',
-                pathname === item.href ? 'text-red-primary scale-110' : 'text-[#373737]'
-              )}
+              href="/"
+              className="text-xl uppercase text-primary font-black"
               onClick={() => setIsMenuOpen(false)}
             >
-              {item.name}
+              Logo
             </Link>
-          ))}
-          <Link href="/dang-ky" onClick={() => setIsMenuOpen(false)} className="w-full">
-            <Button className="w-full rounded-2xl bg-red-primary py-8 text-xl font-black uppercase tracking-widest text-white shadow-2xl">
-              Đăng ký ngay
-            </Button>
-          </Link>
+            <button onClick={() => setIsMenuOpen(false)}>
+              <X className="size-7 text-red-primary" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Links */}
+          <div className="flex flex-col gap-2 p-6 overflow-y-auto">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "py-2 text-lg font-normal tracking-wider transition-all border-b border-gray-50 last:border-0",
+                  pathname === item.href
+                    ? "text-red-primary"
+                    : "text-[#373737]",
+                )}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Action */}
+          <div className="mt-auto p-6 border-t border-gray-50">
+            <Link
+              href="#register-form"
+              onClick={() => setIsMenuOpen(false)}
+              className="w-full"
+            >
+              <Button className="w-full rounded-xl bg-red-primary py-7 text-lg font-black uppercase tracking-widest text-white shadow-xl hover:scale-[1.02] active:scale-95 transition-all">
+                Ứng tuyển ngay
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </header>

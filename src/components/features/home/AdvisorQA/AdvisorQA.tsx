@@ -1,35 +1,32 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { PlusIcon, MinusIcon } from 'lucide-react';
-import { IMAGES } from '@/lib/constants/images';
-import CommitmentBadge from '../ui/CommitmentBadge';
+import { MinusIcon, PlusIcon } from "lucide-react";
+import CommitmentBadge from "../ui/CommitmentBadge";
 
 const qaData = [
   {
-    id: 'item-1',
-    question: '1. Học phí cho mỗi khóa học tại Học Bá là bao nhiêu?',
+    id: "item-1",
+    question: "1. Cần chuẩn bị những gì khi đến ứng tuyển?",
     answer:
-      'Học phí các khóa học tại Học Bá dao động từ 3 – 15 triệu, tùy theo cấp độ. Để nhận tư vấn chi tiết và lộ trình phù hợp với mục tiêu cá nhân, hãy để lại thông tin, Học Bá sẽ hỗ trợ bạn 1:1.',
+      "Bạn chỉ cần mang theo Căn cước công dân và các bằng cấp liên quan (nếu có). Đội ngũ nhân sự sẽ hướng dẫn bạn hoàn thiện hồ sơ chi tiết sau khi phỏng vấn đạt yêu cầu.",
   },
   {
-    id: 'item-2',
-    question: '2. Lộ trình học tại Học Bá như thế nào?',
+    id: "item-2",
+    question: "2. Chưa có kinh nghiệm có được nhận vào làm không?",
     answer:
-      'Lộ trình ôn thi tại Học Bá được thiết kế cá nhân hóa, tập trung vào các kiến thức trọng tâm để học viên không lãng phí thời gian vào nội dung không cần thiết. Kết hợp cùng phương pháp học thông minh và tài liệu ôn luyện cập nhật theo chuẩn Tiếng Trung mới nhất, Học Bá giúp bạn tiếp thu nhanh, hiệu quả và tiết kiệm tối đa thời gian.',
+      "Hoàn toàn được! Công ty luôn chào đón lao động phổ thông chưa có tay nghề. Bạn sẽ được đào tạo bài bản từ đầu, có lương trong quá trình học việc và cam kết có việc làm ổn định ngay sau đào tạo.",
   },
   {
-    id: 'item-3',
-    question: '3. Học Bá có cam kết chất lượng đầu ra không?',
+    id: "item-3",
+    question: "3. Chế độ lương và bảo hiểm của công ty như thế nào?",
     answer:
-      'Có! Học Bá cam kết đầu ra rõ ràng cho từng khóa học. Nếu học viên tuân thủ đúng lộ trình học tập và hướng dẫn từ giáo viên nhưng không đạt kết quả như mong muốn, chúng tôi sẽ hỗ trợ học lại miễn phí hoặc có giải pháp bù đắp phù hợp.',
+      "Công ty cam kết mức lương cạnh tranh, trả đúng hạn vào ngày 10 hàng tháng. 100% nhân viên được đóng BHXH, BHYT đầy đủ và hưởng các chế độ thưởng lễ, Tết, chuyên cần cực kỳ hấp dẫn.",
   },
   {
-    id: 'item-4',
-    question: '4. Người mới bắt đầu học Tiếng Trung cần tối thiểu bao lâu để giao tiếp cơ bản tiếng Trung?',
+    id: "item-4",
+    question: "4. Công ty có hỗ trợ chỗ ở cho nhân viên ở xa không?",
     answer:
-      'Thời gian để một người mới bắt đầu có thể giao tiếp cơ bản bằng Tiếng Trung phụ thuộc vào lộ trình học và mức độ tập trung của từng học viên. Với phương pháp giảng dạy tại Học Bá, nếu học viên học đúng lộ trình và thực hành đều đặn, chỉ sau 2-3 tháng, bạn đã có thể nắm vững các mẫu câu giao tiếp thông dụng và tự tin trao đổi trong những tình huống hàng ngày.',
+      "Công ty có chính sách hỗ trợ tìm kiếm nhà trọ hoặc hỗ trợ chi phí đi lại cho nhân viên ở xa. Chúng tôi luôn nỗ lực tạo điều kiện tốt nhất để người lao động an tâm làm việc và gắn bó lâu dài.",
   },
 ];
 
@@ -37,16 +34,20 @@ const AdvisorQA = () => {
   return (
     <section
       id="advisor-qa"
-      className="relative mx-auto max-w-[1493px] py-12 md:py-24 bg-gradient-to-b from-[#FFFBF700] via-[#FFF7EF] to-[#FFF9F900]"
+      className="relative mx-auto max-w-[1493px] py-6 md:py-24 bg-gradient-to-b from-[#FFFBF700] via-[#FFF7EF] to-[#FFF9F900]"
     >
       <div className="relative z-10 mx-auto max-w-[1212px] px-4 lg:px-8">
         <div className="mb-10 md:mb-16">
           <div className="flex items-center gap-6">
-            <span className="text-7xl font-black text-red-primary md:text-[120px] drop-shadow-lg">?</span>
+            <span className="text-7xl font-black text-red-primary md:text-[120px] drop-shadow-lg">
+              ?
+            </span>
             <div>
-              <h2 className="py-2 text-2xl font-black text-[#373737] md:text-[42px] tracking-tight">Giải Đáp 1:1</h2>
-              <CommitmentBadge className="rounded-xl px-6 py-2 text-lg font-black md:text-[32px] md:py-3 shadow-xl">
-                CÙNG CỐ VẤN HỌC TẬP
+              <h2 className="py-2 text-2xl font-black text-[#373737] md:text-[42px] tracking-tight">
+                Giải Đáp Thắc Mắc
+              </h2>
+              <CommitmentBadge className="rounded-xl px-4 py-2 text-lg font-black md:text-[32px] md:py-3 shadow-xl">
+                DÀNH CHO NGƯỜI LAO ĐỘNG
               </CommitmentBadge>
             </div>
           </div>
@@ -80,34 +81,9 @@ const AdvisorQA = () => {
               </details>
             ))}
           </div>
-
-          {/* Image Section */}
-          <div className="relative w-full lg:w-[40%] flex justify-center items-center mt-12 lg:mt-0">
-            {/* Mascot / Icon decoration */}
-            <div className="absolute -top-16 right-10 z-20 md:-top-24 md:right-20 animate-bounce-slow">
-              <Image
-                src={IMAGES.schedule.camket_maybay}
-                alt="Decoration"
-                width={100}
-                height={100}
-                className="h-auto w-20 md:w-32 drop-shadow-2xl"
-              />
-            </div>
-            
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-t from-red-primary/10 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <Image 
-                src={IMAGES.home.shot2} 
-                alt="Advisor QA" 
-                width={600} 
-                height={600} 
-                className="relative z-10 h-auto w-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-[1.03]" 
-              />
-            </div>
-          </div>
         </div>
       </div>
-      
+
       {/* Decorative side blurs */}
       <div className="absolute -left-20 top-1/2 size-80 -translate-y-1/2 rounded-full bg-red-primary/5 blur-[100px] pointer-events-none"></div>
     </section>

@@ -1,20 +1,26 @@
 import { IMAGES } from "@/lib/constants/images";
+import { Great_Vibes } from "next/font/google";
 import Image from "next/image";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 const heroData = [
   {
     number: "01",
-    content: "Lộ trình học cá nhân hóa theo năng lực",
+    content: "Lao động phổ thông",
     link: "#roadmap-section",
   },
   {
     number: "02",
-    content: "Mentor học tập đồng hành 1–1",
+    content: "Nhân viên văn phòng",
     link: "#mentor-content",
   },
   {
     number: "03",
-    content: "Chương trình chuẩn HSK 3.0 & thực chiến",
+    content: "Các vị trí khác",
     link: "#detection-section",
   },
 ];
@@ -34,28 +40,21 @@ export default function HeroSession() {
       <div className="container z-10 mx-auto w-full lg:px-6">
         <div className="flex flex-col items-center gap-5 lg:flex-row lg:gap-0">
           <nav className="mt-7 flex w-full flex-col items-start px-4 text-left md:mt-0 lg:w-[52%]">
-            <div className="mb-3 inline-flex max-h-[70px] items-center justify-between gap-6 rounded-xl bg-gradient-to-r from-[#7D1900] to-[#B90E0A] px-3 max-sm:w-full lg:mb-10">
-              <p className="border-white/30 text-xs font-bold uppercase leading-tight text-white lg:text-base">
-                Hệ thống giáo dục
-                <br />
-                Hán ngữ trực tuyến
+            <div
+              className={`${greatVibes.className} text-white text-3xl px-10 py-2 mb-3 flex max-sm:flex-col items-center justify-between rounded-xl bg-gradient-to-r from-[#7D1900] to-[#B90E0A] px-3 max-sm:w-full lg:mb-10`}
+            >
+              <p className="w-full ">Việc làm ổn định</p>
+              <p className="text-right  justify-end flex w-full">
+                Thu nhập bền vững
               </p>
-              <Image
-                src={IMAGES.home.oneVn}
-                alt="Học Bá - Trung tâm tiếng Trung số 1 Việt Nam"
-                width={190}
-                height={70}
-                className="mb-2 object-cover max-sm:h-[52.5px] max-sm:w-[150px] sm:scale-[1.2]"
-                priority
-              />
             </div>
 
             <div className="mb-[18px] w-full space-y-4 md:w-auto lg:mb-12">
               <h1
                 id="hero-heading"
-                className="min-h-[80px] font-black !leading-[1.2] tracking-tight text-primary max-sm:text-center lg:min-h-[120px]"
+                className="min-h-[90px] font-black !leading-[1.2] tracking-tight text-primary max-sm:text-center lg:min-h-[140px]"
               >
-                <span className="inline-block text-[28px] underline lg:text-[48px]">
+                <span className="inline-block text-[36px] underline lg:text-[56px]">
                   {" "}
                   Tuyển dụng{" "}
                 </span>
@@ -66,7 +65,7 @@ export default function HeroSession() {
               </h1>
 
               <p className="mt-4 flex min-h-[56px] w-full items-center justify-center rounded-2xl border-[3px] border-[#F3C650] bg-white/50 px-6 py-3 shadow-gold backdrop-blur-sm md:w-fit md:justify-start lg:min-h-[68px]">
-                <strong className="text-xl font-extrabold uppercase leading-tight text-primary sm:font-black lg:text-3xl">
+                <strong className="text-2xl font-extrabold uppercase leading-tight text-primary sm:font-black lg:text-3xl">
                   Các vị trí tuyển dụng
                 </strong>
               </p>
@@ -107,7 +106,7 @@ export default function HeroSession() {
                       aria-hidden="true"
                     />
 
-                    <span className="flex-1 text-xs font-bold uppercase leading-tight text-primary transition-colors group-hover:text-white md:text-base lg:text-lg">
+                    <span className="flex-1 text-lg font-bold uppercase leading-tight text-primary transition-colors group-hover:text-white md:text-base lg:text-lg">
                       {item.content}
                     </span>
 
@@ -130,8 +129,8 @@ export default function HeroSession() {
           <div className="right-0 min-h-[327px] w-full md:min-h-[515px] lg:absolute lg:w-[48%]">
             <div className="relative z-10 mx-auto h-auto w-full overflow-hidden lg:ml-auto lg:max-w-[1011px]">
               <Image
-                src={IMAGES.home.heroClass}
-                alt="Lớp học tiếng Trung trực tuyến tại Học Bá - Giáo viên chuyên nghiệp hướng dẫn học viên với chương trình HSK chuẩn quốc tế"
+                src={IMAGES.home.heroGarment}
+                alt="Môi trường làm việc hiện đại, chuyên nghiệp tại Công ty CP May An Hưng - Dây chuyền sản xuất tiên tiến với đội ngũ công nhân tay nghề cao"
                 width={1011}
                 height={515}
                 priority

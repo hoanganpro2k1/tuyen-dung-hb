@@ -1,88 +1,89 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { IMAGES } from '@/lib/constants/images';
-import SuccessHeader from './SuccessHeader';
-import EvidenceGallery from './EvidenceGallery';
-import { TestimonialSlider, type TestimonialItem } from './TestimonialSlider';
+import { IMAGES } from "@/lib/constants/images";
+import SuccessHeader from "./SuccessHeader";
+import { TestimonialSlider, type TestimonialItem } from "./TestimonialSlider";
 
 const testimonials: TestimonialItem[] = [
   {
-    name: 'Hoàng Tú Anh',
-    role: 'Nhân viên văn phòng',
-    location: 'TP HCM',
+    name: "Nguyễn Thị Hoa",
+    role: "Công nhân may",
+    location: "Thanh Chương, Nghệ An",
     rating: 5,
-    hskLevel: 'HSK 4',
-    timeSpent: 'Sau 9 tháng',
+    hskLevel: "TỔ 1",
+    timeSpent: "Gắn bó 3 năm",
     content:
-      'Review qua 2 khoá H2-3 rồi lên H4 nha. Mình dân tiếng Anh qua học tiếng Trung. Lúc đầu mấy bạn tư vấn bên Học Bá này mình thấy oke, hỏi han đầy đủ rõ ràng mục tiêu học học rõ ràng... Mình cũng có thử qua 1 số hệ thống LMS khác của tiếng Anh thì bên này làm rất oke, giống form của nước ngoài. Học ở đây rất hiệu quả!',
-    likes: 348,
-    shares: 67,
+      "Làm việc ở đây môi trường rất chuyên nghiệp, lương thưởng luôn đúng hạn. Lúc mới vào tôi chưa biết may nhiều nhưng được các anh chị đi trước chỉ bảo tận tình. Giờ thu nhập ổn định, tôi có điều kiện lo cho con cái ăn học tốt hơn.",
+    likes: 452,
+    shares: 82,
     avatar: IMAGES.home.HoangTuAnh.src,
   },
   {
-    name: 'Lê Thương',
-    role: 'Học sinh lớp 12',
-    location: 'Hà Nội',
+    name: "Trần Văn Nam",
+    role: "Nhân viên kiểm hàng (QC)",
+    location: "Đô Lương, Nghệ An",
     rating: 5,
-    hskLevel: 'HSK 3',
-    timeSpent: 'Từ mất gốc',
+    hskLevel: "KỸ THUẬT",
+    timeSpent: "Gắn bó 2 năm",
     content:
-      'Mình đang học lớp HSK3 cô Tâm học vui lắm ạ, nhma cnhan học Tiếng Trung siêu khó nha xdinh là áp lực nếu lười :))) còn mình học thì có mentor nhắc bài với chấm chữa bt siêu kĩ nên học thấy tiến bộ đều rõ nha. Học phí k rẻ cũng k đắt mà so với thị trg là xứng đáng, highly rcm nhaaaa bác ơi',
-    likes: 128,
-    shares: 23,
-    avatar: IMAGES.home.LeThuong.src,
-  },
-  {
-    name: 'Tiến Vũ',
-    role: 'Nhân viên IT ',
-    location: 'Đà Nẵng',
-    rating: 5,
-    hskLevel: 'HSK 6',
-    timeSpent: 'Sau 7+ tháng',
-    content:
-      'Mình đã đi làm nên quỹ thời gian hạn chế. Tình cờ biết đến Học Bá có lớp online 100% thời gian linh động nên đăng ký học luôn. Mình học H6 trong thời gian cam kết 6 tháng của trung tâm cùng với ctrinh H6 học 100% với giáo viên bản xứ. Giảng viên bản xứ cực kỳ nhiệt tình, theo sát từng buổi, giúp mình tiến bộ rõ rệt Kết quả là mình đỗ HSK6 đợt thi tháng 9 / 2025. Rất cảm ơn trung tâm và cô Junchi đã support hết mình.',
-    likes: 298,
-    shares: 68,
+      "Chế độ phúc lợi của công ty rất tốt, có đầy đủ bảo hiểm và thưởng lễ tết. Môi trường làm việc năng động, sạch sẽ. Tôi thích nhất là sự quan tâm của công đoàn đối với đời sống anh em công nhân, giúp mọi người luôn an tâm sản xuất.",
+    likes: 215,
+    shares: 45,
     avatar: IMAGES.home.TienVu.src,
   },
   {
-    name: 'Khánh Ly',
-    role: '26 tuổi',
-    location: 'Đà Nẵng',
+    name: "Lê Thị Lan",
+    role: "Công nhân hoàn thiện",
+    location: "Nam Đàn, Nghệ An",
     rating: 5,
-    hskLevel: 'HSK 4',
-    timeSpent: 'Từ mất gốc',
+    hskLevel: "TỔ 5",
+    timeSpent: "Gắn bó 5 năm",
     content:
-      'Bên này thì công tâm mà nói ko rẻ nha. Nhưng học thì đc care khá là sát. GV cũng cũng nha, học tới đâu mà phần nào k hiểu cũng hỏi lại học viên luôn để giảng lại. Đã học và tự tin lấy H4 nên rcm mấy bạn muốn học đạt hiệu quả tốt. Tuy nhiên sẽ bị nản thời gian đầu vì nhiều task bài tập lắm mn ạ, cố vượt qua thì mới quen được nhịp độ lớp ý.',
-    likes: 98,
-    shares: 12,
+      "Công ty An Hưng là nơi làm việc lý tưởng cho lao động địa phương. Không cần phải đi làm xa xứ, ngay tại quê nhà mình vẫn có mức thu nhập tốt. Lịch làm việc hợp lý giúp tôi có thời gian chăm sóc gia đình sau giờ làm.",
+    likes: 367,
+    shares: 56,
+    avatar: IMAGES.home.LeThuong.src,
+  },
+  {
+    name: "Phạm Minh Đức",
+    role: "Tổ trưởng sản xuất",
+    location: "Yên Thành, Nghệ An",
+    rating: 5,
+    hskLevel: "QUẢN LÝ",
+    timeSpent: "Gắn bó 4 năm",
+    content:
+      "Tôi bắt đầu từ vị trí công nhân và sau 4 năm nỗ lực đã được đề bạt lên làm tổ trưởng. Công ty luôn tạo cơ hội thăng tiến cho những ai có năng lực và thái độ tốt. Rất tự hào khi là một phần của đại gia đình An Hưng.",
+    likes: 189,
+    shares: 32,
     avatar: IMAGES.home.KhanhLy.src,
   },
   {
-    name: 'Vũ Hải My',
-    role: 'Sinh viên',
-    location: 'Hà Nội',
+    name: "Hoàng Thị Mai",
+    role: "Nhân viên đóng gói",
+    location: "Nghệ An",
     rating: 5,
-    hskLevel: 'HSK 3',
-    timeSpent: 'Sau 6+ tháng',
+    hskLevel: "KHO",
+    timeSpent: "Gắn bó 1 năm",
     content:
-      'Lúc đầu tìm hiểu thì thấy đắt hơn bên khác, cơ mà thấy LMS thấy lạ lạ, nên đăng kí thử đến h3 thui, mà học được với gv cute cũng khá okee. mình vừa học xong H3 trộm vía qua test, vừa gia hạn H4 á, mà sắp tết rồi bận quá nên là đk trước để sau sắp xếp đc lại học tiếp. không biết lên h4 khó hơn không nhưng h3 thấy ổn',
-    likes: 68,
-    shares: 3,
+      "Dù mới vào làm được 1 năm nhưng tôi cảm nhận được sự ấm áp và đoàn kết của mọi người. Công việc phù hợp với sức khỏe, thu nhập ổn định và đặc biệt là không bị áp lực tiêu cực. Rất đáng để gắn bó lâu dài.",
+    likes: 124,
+    shares: 18,
     avatar: IMAGES.home.VuHaiMy.src,
   },
 ];
 
 const StudentSuccess = () => {
   return (
-    <section id="student-success" className="overflow-hidden bg-white py-10 md:py-20">
+    <section
+      id="student-success"
+      className="overflow-hidden bg-white pt-0 pb-0 md:py-20"
+    >
       <SuccessHeader />
-      <EvidenceGallery />
       <div className="mt-12 md:mt-24">
-        <div className="container mx-auto px-4 text-center mb-8">
-          <h3 className="text-2xl font-black uppercase text-[#373737] md:text-4xl">
-            Cảm nhận từ <span className="text-red-primary">người thật - việc thật</span>
+        <div className="container mx-auto px-4 text-center mb-4">
+          <h3 className="text-xl font-black uppercase text-[#373737] md:text-4xl">
+            Cảm nhận{" "}
+            <span className="text-red-primary">người thật - việc thật</span>
           </h3>
           <div className="mx-auto mt-4 h-1.5 w-24 rounded-full bg-gold-primary"></div>
         </div>
