@@ -21,7 +21,9 @@ export const SITE_SETTINGS = {
     "Công ty CP May An Hưng",
     "Tuyển dụng công nhân may",
   ],
-  site_url: process.env.NEXT_PUBLIC_CLIENT_URL || "https://mayanhung.com.vn",
+  site_url:
+    process.env.NEXT_PUBLIC_CLIENT_URL ||
+    "https://tuyen-dung-anhung.ah-startup.asia",
 
   // Analytics
   google_analytics_tracking_id: "G-YJJT3GGKZL",
@@ -41,10 +43,10 @@ export const SITE_SETTINGS = {
 
   // Social Media
   // Social Media
-  social_facebook_education: "https://www.facebook.com/mayanhung",
-  social_facebook_hocbahsk: "https://www.facebook.com/mayanhung.tuyendung",
-  social_instagram: "https://www.instagram.com/mayanhung",
-  social_zalo: "https://zalo.me/02383861786",
+  social_facebook_education: "https://tuyen-dung-anhung.ah-startup.asia",
+  social_facebook_hocbahsk: "https://tuyen-dung-anhung.ah-startup.asia",
+  social_instagram: "https://tuyen-dung-anhung.ah-startup.asia",
+  social_zalo: "https://zalo.me/0983439381",
 
   // Address
   address_street: "Khối 1, Thị trấn Tân Kỳ",
