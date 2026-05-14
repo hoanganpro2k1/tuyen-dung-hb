@@ -84,7 +84,7 @@ const CoreQuality = () => {
                           alt="Quote Icon"
                           width={40}
                           height={40}
-                          className="mb-3 max-sm:max-w-[70%] transform group-hover:scale-110 transition-transform"
+                          className="mb-3 h-auto max-sm:max-w-[70%] transform group-hover:scale-110 transition-transform"
                         />
                         <span className="bg-gradient-to-r from-gold-primary to-[#FFF] bg-clip-text text-3xl font-black leading-none text-transparent md:text-[50px]">
                           {item.id}
